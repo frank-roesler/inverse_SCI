@@ -4,6 +4,7 @@ Contents:
 * `compute_u.m` main function that returns the primitive of the potential from the eigenvalues and norming constants,
 * `build_A.m` computes the matrix A appearing in the equation (Id-A)c = b from the eigenvalues and norming constants,
 * `build_b.m` computes the right-hand side b appearing in the equation (Id-A)c = b from the eigenvalues and norming constants,
+* `I.m` returns the (symbolically computed) integral of cos(at)cos(bt) from t=0 to x,
 * `inverse_main.m` example script that reconstructs the potential and boundary conditions from data provided in a .mat file. 
 
 Any comments or queries are welcome at https://frank-roesler.github.io/contact/
