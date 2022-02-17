@@ -1,5 +1,4 @@
 function A = build_A(x,n,lambda,alpha)
-% Assembles matrix A needed to compute u (cf. compute_u.m).
     N = length(lambda);
     if x==0
         A = zeros(2*N);
@@ -36,7 +35,11 @@ function A = build_A(x,n,lambda,alpha)
         end
         zero_column = zeros(1,N);
         for i=1:N
-            zero_column(i) = 1/sqrt(pi*alpha(i)) * sin(lambda(i)*x)/lambda(i);
+            if lambda(i)~=0
+                zero_column(i) = 1/sqrt(pi*alpha(i)) * sin(lambda(i)*x)/lambda(i);
+            else
+                zero_column(i) = 1/sqrt(pi*alpha(i)) * x;
+            end
         end
         A12(:,1) = zero_column;
 
